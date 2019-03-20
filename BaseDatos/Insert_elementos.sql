@@ -1,0 +1,1 @@
+insert into elemento (NombreElemento,TipoElemento,NumeroAtomico,MasaAtomica) values ("Hidrogeno","No metal",1,1.008);
