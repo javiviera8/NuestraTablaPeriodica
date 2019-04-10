@@ -293,7 +293,7 @@ insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomi
 values ("Telurio","Te","Semi conductor",52,127.60,"telurio.avi");
 
 insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
-values ("Yodo","I","No metl",53,126.90,"yodo.avi");
+values ("Yodo","I","No metal",53,126.90,"yodo.avi");
 
 insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
 values ("Xenon","Xe","Gas noble",54,131.29,"xenon.avi");
