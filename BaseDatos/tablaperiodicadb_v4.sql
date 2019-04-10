@@ -393,3 +393,99 @@ values ("Astato","At","Semi conductor",85,210,"astato.avi");
 
 insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
 values ("Radon","Rn","Gas noble",86,222,"radon.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Francio","Fr","Metal",87,223,"francio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Radio","Ra","Metal",88,226,"radio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Actinio","Ac","Metal",89,227,"actinio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Torio","Th","Metal",90,232.04,"torio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Protactinio","Pa","Metal",91,231.04,"protactinio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Uranio","U","Metal",92,238.03,"uranio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Neptunio","Np","Metal",93,237,"neptunio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Plutonio","Pu","Metal",94,244,"plutonio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Americio","Am","Metal",95,243,"Americio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Curio","Cm","Metal",96,247,"curio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Berkelio","Bk","Metal",97,247,"berkelio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Californio","Cf","Metal",98,251,"californio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Einstenio","Es","Metal",99,252,"einstenio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Fermio","Fm","Metal",100,257,"fermio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Mendelevio","Md","Metal",101,258,"mendelevio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Nobelio","No","Metal",102,259,"nobelio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Lawrencio","Lr","Metal",103,266,"lawrencio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Rutherfordio","Rf","Metal",104,267,"rutherfordio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Dubnio","Db","Metal",105,268,"dubnio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Seaborgio","Sg","Metal",106,269,"seaborgio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Bohrio","Bh","Metal",107,270,"bohrio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Hassio","Hs","Metal",108,277,"hassio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Meitnerio","Mt","Metal",109,278,"meitnerio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Darmstadio","Ds","Metal",110,281,"darmstadio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Roentgenio","Rg","Metal",111,282,"roentgenio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Copernicio","Cn","Metal",112,285,"copernicio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Nihonium","Nh","Metal",113,286,"nihonium.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Flerovio","Fl","Metal",114,289,"flerovio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Moscovium","Mc","Metal",115,290,"moscovium.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Livermorio","Lv","Metal",116,293,"livermorio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Tennessine","Ts","Metal",117,294,"tennessine.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Oganesson","Og","Metal",118,294,"oganession");

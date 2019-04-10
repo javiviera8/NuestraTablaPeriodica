@@ -1,3 +1,141 @@
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: tablaperiodicadb
+-- ------------------------------------------------------
+-- Server version	8.0.15
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `elemento`
+--
+
+DROP TABLE IF EXISTS `elemento`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `elemento` (
+  `nombreElemento` varchar(50) NOT NULL,
+  `simbolo` varchar(45) NOT NULL,
+  `tipoElemento` varchar(45) NOT NULL,
+  `numeroAtomico` int(11) NOT NULL,
+  `masaAtomica` float NOT NULL,
+  `urlVideo` varchar(50) NOT NULL,
+  PRIMARY KEY (`nombreElemento`),
+  UNIQUE KEY `nombreElemento_UNIQUE` (`nombreElemento`),
+  UNIQUE KEY `simbolo_UNIQUE` (`simbolo`),
+  UNIQUE KEY `urlVideo_UNIQUE` (`urlVideo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `elemento`
+--
+
+LOCK TABLES `elemento` WRITE;
+/*!40000 ALTER TABLE `elemento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `elemento` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `operacion`
+--
+
+DROP TABLE IF EXISTS `operacion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `operacion` (
+  `idOperacion` int(11) NOT NULL AUTO_INCREMENT,
+  `elementoSolicitado` varchar(45) NOT NULL,
+  `fecha` int(12) NOT NULL,
+  PRIMARY KEY (`idOperacion`),
+  KEY `fk_operacion_elemento_idx` (`elementoSolicitado`),
+  CONSTRAINT `fk_operacion_elemento` FOREIGN KEY (`elementoSolicitado`) REFERENCES `elemento` (`nombreElemento`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `operacion`
+--
+
+LOCK TABLES `operacion` WRITE;
+/*!40000 ALTER TABLE `operacion` DISABLE KEYS */;
+/*!40000 ALTER TABLE `operacion` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tabla`
+--
+
+DROP TABLE IF EXISTS `tabla`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tabla` (
+  `idTabla` int(11) NOT NULL AUTO_INCREMENT,
+  `elementos` varchar(50) NOT NULL,
+  PRIMARY KEY (`idTabla`),
+  KEY `fk_tabla_elemento_idx` (`elementos`),
+  CONSTRAINT `fk_tabla_elemento` FOREIGN KEY (`elementos`) REFERENCES `elemento` (`nombreElemento`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tabla`
+--
+
+LOCK TABLES `tabla` WRITE;
+/*!40000 ALTER TABLE `tabla` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabla` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `usuario` (
+  `idUsuario` int(11) NOT NULL,
+  `idTabla` int(11) NOT NULL,
+  PRIMARY KEY (`idUsuario`),
+  KEY `fk_usuario_tabla_idx` (`idTabla`),
+  CONSTRAINT `fk_usuario_tabla` FOREIGN KEY (`idTabla`) REFERENCES `tabla` (`idTabla`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuario`
+--
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-03-27 12:00:19
+
+--
+-- INSERT ELEMENTOS
+--
+
 insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
 values ("Hidrogeno","H","No Metal",1,1.0079,"hidrogeno.avi");
 
@@ -256,3 +394,98 @@ values ("Astato","At","Semi conductor",85,210,"astato.avi");
 insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
 values ("Radon","Rn","Gas noble",86,222,"radon.avi");
 
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Francio","Fr","Metal",87,223,"francio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Radio","Ra","Metal",88,226,"radio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Actinio","Ac","Metal",89,227,"actinio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Torio","Th","Metal",90,232.04,"torio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Protactinio","Pa","Metal",91,231.04,"protactinio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Uranio","U","Metal",92,238.03,"uranio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Neptunio","Np","Metal",93,237,"neptunio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Plutonio","Pu","Metal",94,244,"plutonio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Americio","Am","Metal",95,243,"Americio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Curio","Cm","Metal",96,247,"curio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Berkelio","Bk","Metal",97,247,"berkelio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Californio","Cf","Metal",98,251,"californio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Einstenio","Es","Metal",99,252,"einstenio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Fermio","Fm","Metal",100,257,"fermio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Mendelevio","Md","Metal",101,258,"mendelevio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Nobelio","No","Metal",102,259,"nobelio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Lawrencio","Lr","Metal",103,266,"lawrencio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Rutherfordio","Rf","Metal",104,267,"rutherfordio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Dubnio","Db","Metal",105,268,"dubnio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Seaborgio","Sg","Metal",106,269,"seaborgio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Bohrio","Bh","Metal",107,270,"bohrio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Hassio","Hs","Metal",108,277,"hassio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Meitnerio","Mt","Metal",109,278,"meitnerio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Darmstadio","Ds","Metal",110,281,"darmstadio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Roentgenio","Rg","Metal",111,282,"roentgenio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Copernicio","Cn","Metal",112,285,"copernicio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Nihonium","Nh","Metal",113,286,"nihonium.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Flerovio","Fl","Metal",114,289,"flerovio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Moscovium","Mc","Metal",115,290,"moscovium.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Livermorio","Lv","Metal",116,293,"livermorio.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Tennessine","Ts","Metal",117,294,"tennessine.avi");
+
+insert into elemento(nombreElemento,simbolo,tipoElemento,numeroAtomico,masaAtomica,urlVideo) 
+values ("Oganesson","Og","Metal",118,294,"oganession");
