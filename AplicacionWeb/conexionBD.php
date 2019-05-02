@@ -1,14 +1,15 @@
 <?php
+  $con=mysqli_connect('localhost','root','root','tablaperiodicadb')
+  or die('Error en la conexión de la base de datos');
+  $sql="insert into usuario(nombre,oid_tabla_periodica) values('".$_POST["nombre"]."',
+  '".$_POST["oid_tabla_periodica"]."')";
+  $result=mysqli_query($con,$sql) or die('Error en el query database');
+  mysqli_close($con);
 
-  function conectDatabase() {
-    $user = "root";
-    $pass = "root";
-    $server = "localhost";
-    $dataBase = "nuestratablaperiodicadb";
-    $conexion = mysqli_connect($server,$user,$pass)
-                or die ("Error al conectar con la base de datos".mysqli_error());
-    mysqli_select_db($dataBase,$conexion);
-    return $conexion;
-  }
-
+  echo 'El nombre de usuario es: '.$_POST["nombre"].'<br/>';
  ?>
+ <html>
+ <form action="principal.html" method="post">
+   <input type="submit" name="aceptar" value="Aceptar">
+ </form>
+</html>
