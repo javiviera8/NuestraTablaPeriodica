@@ -58,7 +58,7 @@ void setup()
    pinMode(muxS2, OUTPUT);
    pinMode(muxS3, OUTPUT);
    pinMode(muxSIG, INPUT);
-      pinMode(muxS4, OUTPUT);
+   pinMode(muxS4, OUTPUT);
    pinMode(muxS5, OUTPUT);
    pinMode(muxS6, OUTPUT);
    pinMode(muxS7, OUTPUT);
@@ -67,7 +67,7 @@ void setup()
  
 void loop()
 {
-   for (byte i = 0; i < 3; i++)
+   for (byte i = 0; i < 16; i++)
    {
       SetMuxChannel(i);
       SetMuxChannel2(i);
@@ -83,8 +83,8 @@ void loop()
       //delay(10);
       }
       if(muxValue2==0){
-      String res = "Hola soy el botón " + String(i+16) + ": " /*+ muxValue*/;
-      Serial.print(res);
+      //String res = "Hola soy el botón " + String(i+16) + ": " /*+ muxValue*/;
+      Serial.print(elementos[i+16]);
       Serial.print("\t\n");
       //delay(10);
       }
