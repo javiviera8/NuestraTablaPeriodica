@@ -8,10 +8,12 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if(digitalRead(pulsador)==HIGH) {
-    Serial.println('H');
-  } else {
+  if(digitalRead(pulsador)==LOW) {
     Serial.println('L');
+    delay(200);
+  } else {
+        Serial.println('H');
+        delay(200);
   }
 
 }
