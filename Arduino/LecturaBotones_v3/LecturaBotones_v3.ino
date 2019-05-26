@@ -46,7 +46,7 @@ const int muxS28 =50 ;
 const int muxS29 =51 ;
 const int muxS30 =52 ;
 const int muxS31 =53 ;
-/*
+
 String elementos[256]={"Hidrogeno","Helio","Litio","Berilio","Boro","Carbono","Nitrogeno",
 "Oxigeno","Fluor","Neon","Sodio","Magnesio","Aluminio","Silicio","Fosforo","Azufre",
 "Cloro","Argon","Potasio","Calcio","Escandio","Titaneo","Vanadio","Cromo","Manganeso","Hierro",
@@ -60,8 +60,8 @@ String elementos[256]={"Hidrogeno","Helio","Litio","Berilio","Boro","Carbono","N
 "Fermio","Mendelevio","Nobelio","Lawrencio","Rutherfordio","Dubnio","Seaborgio","Bohrio","Hassio","Meitnerio",
 "Darmstadio","Roentgenio","Copernicio","Nihonium","Flerovio","Moscovium","Livermorio","Tennessine",
 "Oganesson"};
-*/
-int elementos[256] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+
+//int elementos[256] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
 int SetMuxChannel(byte channel)
 {
    digitalWrite(muxS0, bitRead(channel, 0));
