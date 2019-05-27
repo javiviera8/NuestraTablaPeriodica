@@ -1,3 +1,6 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial myserial(10,11); //RX, TX
 
 const int muxSIG = A0;
 const int muxS0 = 22;
@@ -47,7 +50,7 @@ const int muxS29 =51 ;
 const int muxS30 =52 ;
 const int muxS31 =53 ;
 /*
-String elementos[256]={"Hidrogeno","Helio","Litio","Berilio","Boro","Carbono","Nitrogeno",
+const char* elementos[120]={"Hidrogeno","Helio","Litio","Berilio","Boro","Carbono","Nitrogeno",
 "Oxigeno","Fluor","Neon","Sodio","Magnesio","Aluminio","Silicio","Fosforo","Azufre",
 "Cloro","Argon","Potasio","Calcio","Escandio","Titaneo","Vanadio","Cromo","Manganeso","Hierro",
 "Cobalto","Niquel","Cobre","Cinc","Galio","Germanio","Arsenico","Selenio","Bromo","Kripton","Rubidio",
@@ -61,7 +64,7 @@ String elementos[256]={"Hidrogeno","Helio","Litio","Berilio","Boro","Carbono","N
 "Darmstadio","Roentgenio","Copernicio","Nihonium","Flerovio","Moscovium","Livermorio","Tennessine",
 "Oganesson"};
 */
-int elementos[256] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+
 int SetMuxChannel(byte channel)
 {
    digitalWrite(muxS0, bitRead(channel, 0));
@@ -126,19 +129,13 @@ int SetMuxChannel8(byte channel)
    digitalWrite(muxS30, bitRead(channel, 2));
    digitalWrite(muxS31, bitRead(channel, 3));
 }
-/*String identificaElemento(int n, String elementos[]){
-  String result;
-  for(int i=0; i<3; i++){
-    if(n==i){
-      
-    }
-  }
-}
 
- */
 void setup()
 {
-   Serial.begin(9600);
+  Serial.begin(115200);
+  myserial.begin(9600);
+  pinMode(10,INPUT);
+  pinMode(11,OUTPUT);
    pinMode(muxS0, OUTPUT);
    pinMode(muxS1, OUTPUT);
    pinMode(muxS2, OUTPUT);
@@ -211,8 +208,9 @@ void loop()
       byte muxValue8 = analogRead(muxSIG8);
      
       if(muxValue==0){
-      Serial.print(elementos[i]);
-      Serial.print("\t\n");
+      myserial.write(i);
+      Serial.println(i);
+      //Serial.print("\t\n");
       //delay(10);
       }
       /*
