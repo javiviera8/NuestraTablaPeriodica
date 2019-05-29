@@ -9,13 +9,13 @@ insert into tablaperiodica(nombre_tabla_periodica) values("tabla01");
 --
 -- INSERT USUARIOS
 --
-/*
+
 insert into usuario(nombre_usuario,nombre_tabla_periodica) values ("jaime","tabla01");
 
 insert into usuario(nombre_usuario,nombre_tabla_periodica) values ("boti","tabla01");
 
 insert into usuario(nombre_usuario,nombre_tabla_periodica) values ("asier","tabla01");
-*/
+
 --
 -- INSERT ELEMENTOS
 --
