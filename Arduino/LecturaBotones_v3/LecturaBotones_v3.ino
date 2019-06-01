@@ -208,6 +208,7 @@ void loop()
       byte muxValue8 = analogRead(muxSIG8);
      
       if(muxValue==0){
+
       myserial.write(i);
       Serial.println(i);
       //Serial.print("\t\n");
