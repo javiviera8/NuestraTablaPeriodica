@@ -208,9 +208,9 @@ void loop()
       byte muxValue8 = analogRead(muxSIG8);
      
       if(muxValue==0){
-
-      myserial.write(i);
-      Serial.println(i);
+      myserial.write(i); 
+      Serial.println(i); 
+      delay(1000);
       //Serial.print("\t\n");
       //delay(10);
       }
@@ -252,5 +252,5 @@ void loop()
       }
       */
    }
-   delay(500);
+   delay(100);
 }
